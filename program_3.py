@@ -9,3 +9,32 @@
 # The amount of state sales tax.
 # The total sales tax (county plus state)
 # Use at least one function with input and output in this program
+
+
+
+def county_sales_tax(total_sales):
+    county_tax = (total_sales/100) * 2.5   
+    return county_tax 
+
+def state_sales_tax(total_sales):
+    state_tax = (total_sales/100) * 5 
+    return state_tax 
+
+def main():
+   total_sales = float(input("Enter the total sales for the month: $"))
+
+   county_tax = county_sales_tax(total_sales)
+   state_tax = state_sales_tax(total_sales)
+   total_tax = county_tax+state_tax 
+   
+   print (f"Your total sales is: ${total_sales:.2f}")
+   
+   print (f"Your total county sales tax is: ${county_tax:.2f}")
+   print (f"Your total state sales tax is: ${state_tax:.2f}")
+   print (f"Your total sales tax is: ${total_tax:.2f}")
+   print (f"Your total income this month after tax is ${total_sales-total_tax:.2f}")
+
+main()
+
+
+
